@@ -47,21 +47,6 @@ clean_age(train)
 clean_age(test)
 
 
-# In[194]:
-
-
-# def get_sympts_list(df):
-#     raw_symptoms_list = df['symptoms'].value_counts().keys()
-#     dic = set()
-#     for smps in raw_symptoms_list:
-#         for w in smps.split('; '):
-#             dic.add(w.lower())
-#     return dic
-# all_symps = get_sympts_list(train).union(get_sympts_list(test))
-# all_symps
-train
-
-
 # In[195]:
 
 
@@ -102,18 +87,6 @@ sympts['vomit'] = vomit
 sympts['flu'] = flu
 
 
-# In[196]:
-
-
-# hello = set()
-# for key in sympts.keys():
-#     for i in sympts[key]:
-#         hello.add(i)
-
-
-# In[197]:
-
-
 def clean_symp(df):
     df['symptoms'].fillna(value= 'no symptom',inplace=True)
     for key in sympts.keys():
@@ -141,27 +114,6 @@ test = clean_symp(test).drop(columns=['Id'])
 
 train.to_csv('train_clean1.csv')
 test.to_csv('test_clean1.csv')
-
-
-# In[199]:
-
-
-test
-
-
-# In[198]:
-
-
-train
-
-
-# In[ ]:
-
-
-train
-
-
-# In[ ]:
 
 
 
